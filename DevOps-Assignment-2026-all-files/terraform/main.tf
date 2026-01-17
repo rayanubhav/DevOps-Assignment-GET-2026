@@ -107,7 +107,7 @@ resource "aws_security_group" "web_sg" {
 # 3. Create the Server (EC2 Instance)
 resource "aws_instance" "web_server" {
   ami           = "ami-0c7217cdde317cfec" # Ubuntu 22.04 LTS
-  instance_type = "t2.micro"              # Free Tier Eligible [cite: 20]
+  instance_type = "t3.micro"              # Free Tier Eligible [cite: 20]
   
   # Attach the security group we created above
   vpc_security_group_ids = [aws_security_group.web_sg.id]
