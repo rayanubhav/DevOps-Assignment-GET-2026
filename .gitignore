@@ -1,0 +1,6 @@
+.env
+.terraform/
+*.exe
+*.zip
+*.tar.gz
+
