@@ -128,6 +128,8 @@ resource "aws_instance" "web_server" {
   }
   
   user_data = <<-EOF
+              #!/bin/bash
+              # 1. Install Docker and Git
               
               sudo apt-get update
               sudo apt-get install -y docker.io git
