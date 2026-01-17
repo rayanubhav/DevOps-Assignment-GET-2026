@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 # --- Initialize App ---
 app = Flask(__name__)
-CORS(app) # Enable CORS for everything
+CORS(app) 
 
 # --- Routes ---
 
@@ -20,7 +20,6 @@ def home():
 @app.route("/api/predict-stress", methods=["POST"])
 def predict_stress():
     """Mocks the TensorFlow stress model"""
-    # We return a static "safe" response without loading 500MB models
     return jsonify({
         "stress_level": 3, 
         "suggestions": ["Take a deep breath", "Drink water"],
