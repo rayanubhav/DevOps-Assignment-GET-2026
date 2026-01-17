@@ -127,11 +127,29 @@ resource "aws_instance" "web_server" {
     Name = "EmoCare-DevOps-Assignment-Secure"
   }
   
-  # Simple script to install Docker on startup (User Data)
   user_data = <<-EOF
-              #!/bin/bash
+              
               sudo apt-get update
-              sudo apt-get install -y docker.io
+              sudo apt-get install -y docker.io git
+
+              # 2. Start Docker
               sudo systemctl start docker
+              sudo systemctl enable docker
+
+              cd /home/ubuntu
+              # Cloning the repo 
+              git clone https://github.com/rayanubhav/DevOps-Assignment-GET-2026.git app_repo
+
+              # 4. Build the Docker Image
+              cd app_repo
+              # Note: Your files are inside a subfolder, so we cd into it
+              cd DevOps-Assignment-2026-all-files
+              
+              # Build the image named 'emocare-app'
+              sudo docker build -t emocare-app .
+
+              # 5. Run the Container
+              # Map port 5000 on server to port 5000 in container
+              sudo docker run -d -p 5000:5000 --name emocare-running emocare-app
               EOF
 }
