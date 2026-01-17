@@ -27,7 +27,7 @@ pipeline {
 
         stage('Security Scan (Trivy)') {
             steps {
-                dir('terraform') {
+                dir('DevOps-Assignment-2026-all-files/terraform') {
                     sh 'trivy config . --severity HIGH,CRITICAL --exit-code 1'
                 }
             }
@@ -35,7 +35,7 @@ pipeline {
 
         stage('Terraform Plan') {
             steps {
-                dir('terraform') {
+                dir('DevOps-Assignment-2026-all-files/terraform') {
                     sh 'terraform plan'
                 }
             }
