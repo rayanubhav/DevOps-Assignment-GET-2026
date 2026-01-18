@@ -65,5 +65,5 @@ The generated code fixed these issues by:
 ![Application Running](app-running.png)
 
 ### Video Recording
-**[Link to Video Recording Here]**
+**[https://drive.google.com/file/d/1OXtf84j7GYf-Bu8j6AeD-xg39XuucAIN/view?usp=sharing]**
 *(Click the link above to view the 5-10 minute demonstration of the pipeline execution and deployment.)*
